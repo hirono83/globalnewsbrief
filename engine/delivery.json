@@ -3,8 +3,9 @@
   "repository": {
     "enabled": true,
     "path": "reports/{date}.md",
-    "branch": "claude/festive-brown-x5n1oq",
-    "commit_message": "briefing: {date}"
+    "branch": "main",
+    "commit_message": "briefing: {date}",
+    "branch_note": "엔진이 main에 있으므로 브리핑도 main에 커밋한다."
   },
   "email": {
     "enabled": true,
