@@ -171,6 +171,13 @@ def _fetch_via_curl(url: str, timeout: int) -> bytes:
     if proc.returncode != 0 or not proc.stdout:
         detail = proc.stderr.decode("utf-8", errors="replace").strip()[:120]
         raise FeedError(f"curl 폴백 실패(rc={proc.returncode}): {detail}")
+
+    # curl은 404 안내 페이지나 Cloudflare 챌린지도 200으로 받아온다. 그걸 그대로
+    # 돌려주면 호출부가 "HTML 응답"이라고만 보고하게 되어, 원래 urllib이 알려준
+    # 404/403 같은 훨씬 정확한 진단을 덮어써 버린다. HTML이면 폴백을 실패로 처리해
+    # 원래 오류가 그대로 보고되게 한다.
+    if proc.stdout[:512].lstrip().lower().startswith((b"<!doctype html", b"<html")):
+        raise FeedError("curl 폴백도 HTML을 받음")
     return proc.stdout
 
 
