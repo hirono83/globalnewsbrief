@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "note": "tier는 브리핑 엔진 v4.0 2-2 출처 우선순위. 모든 피드는 engine/check_feeds.py로 검증된 것만 남긴다. 소스를 추가하면 반드시 검사기를 다시 돌린다.",
+  "tiers": {
+    "1": "중앙은행·정부·통계기관·거래소·공시 등 직접 원자료",
+    "2": "전문 통신·금융 매체",
+    "3": "주요 해설 매체",
+    "4": "기타 신뢰 가능한 현지 매체"
+  },
+  "known_blocked": [
+    {"name": "BLS / IMF / CNBC / 한국은행 / 한국경제", "reason": "데이터센터 IP를 WAF가 차단(403 또는 Cloudflare 챌린지). 피드로 수집 불가하므로 해당 카테고리는 LLM 단계에서 웹 검색으로 보강하고 Coverage Audit에 기록한다."}
+  ],
+  "feeds": [
+    {"category": "글로벌", "tier": 1, "name": "WTO News", "url": "https://www.wto.org/library/rss/latest_news_e.xml"},
+    {"category": "글로벌", "tier": 3, "name": "Financial Times", "url": "https://www.ft.com/rss/home"},
+    {"category": "글로벌", "tier": 3, "name": "BBC World", "url": "https://feeds.bbci.co.uk/news/world/rss.xml"},
+    {"category": "글로벌", "tier": 2, "name": "Investing.com News", "url": "https://www.investing.com/rss/news.rss"},
+    {"category": "글로벌", "tier": 3, "name": "Semafor", "url": "https://www.semafor.com/rss.xml"},
+    {"category": "글로벌", "tier": 4, "name": "Channel News Asia", "url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml"},
+    {"category": "글로벌", "tier": 4, "name": "Al Jazeera", "url": "https://www.aljazeera.com/xml/rss/all.xml"},
+
+    {"category": "미국", "tier": 1, "name": "Federal Reserve Press (All)", "url": "https://www.federalreserve.gov/feeds/press_all.xml"},
+    {"category": "미국", "tier": 1, "name": "Federal Reserve Monetary Policy", "url": "https://www.federalreserve.gov/feeds/press_monetary.xml"},
+    {"category": "미국", "tier": 1, "name": "BEA News", "url": "https://apps.bea.gov/rss/rss.xml"},
+    {"category": "미국", "tier": 1, "name": "SEC Press Releases", "url": "https://www.sec.gov/news/pressreleases.rss"},
+    {"category": "미국", "tier": 1, "name": "White House News", "url": "https://www.whitehouse.gov/news/feed/"},
+    {"category": "미국", "tier": 1, "name": "White House Presidential Actions", "url": "https://www.whitehouse.gov/presidential-actions/feed/"},
+    {"category": "미국", "tier": 2, "name": "MarketWatch Top Stories", "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories"},
+    {"category": "미국", "tier": 2, "name": "Yahoo Finance", "url": "https://finance.yahoo.com/news/rssindex"},
+    {"category": "미국", "tier": 3, "name": "Business Insider Markets", "url": "https://markets.businessinsider.com/rss/news"},
+
+    {"category": "유럽", "tier": 1, "name": "ECB Press", "url": "https://www.ecb.europa.eu/rss/press.html"},
+    {"category": "유럽", "tier": 1, "name": "Bank of England News", "url": "https://www.bankofengland.co.uk/rss/news"},
+    {"category": "유럽", "tier": 1, "name": "European Commission Press", "url": "https://ec.europa.eu/commission/presscorner/api/rss?language=en&pagesize=30"},
+    {"category": "유럽", "tier": 3, "name": "Guardian Business", "url": "https://www.theguardian.com/uk/business/rss"},
+    {"category": "유럽", "tier": 3, "name": "Euronews Business", "url": "https://www.euronews.com/rss?level=theme&name=business"},
+    {"category": "유럽", "tier": 3, "name": "DW Business", "url": "https://rss.dw.com/rdf/rss-en-bus"},
+
+    {"category": "중국", "tier": 3, "name": "SCMP China Economy", "url": "https://www.scmp.com/rss/92/feed"},
+    {"category": "중국", "tier": 3, "name": "SCMP China", "url": "https://www.scmp.com/rss/4/feed"},
+    {"category": "중국", "tier": 4, "name": "Global Times", "url": "https://www.globaltimes.cn/rss/outbrain.xml"},
+
+    {"category": "일본", "tier": 1, "name": "Bank of Japan What's New", "url": "https://www.boj.or.jp/en/rss/whatsnew.xml"},
+    {"category": "일본", "tier": 3, "name": "Nikkei Asia", "url": "https://asia.nikkei.com/rss/feed/nar"},
+    {"category": "일본", "tier": 3, "name": "Japan Times", "url": "https://www.japantimes.co.jp/feed/"},
+
+    {"category": "한국", "tier": 2, "name": "연합뉴스 경제", "url": "https://www.yna.co.kr/rss/economy.xml"},
+    {"category": "한국", "tier": 2, "name": "연합뉴스 전체", "url": "https://www.yna.co.kr/rss/news.xml"},
+    {"category": "한국", "tier": 3, "name": "매일경제 경제", "url": "https://www.mk.co.kr/rss/30100041/"},
+    {"category": "한국", "tier": 3, "name": "매일경제 증권", "url": "https://www.mk.co.kr/rss/50100032/"},
+    {"category": "한국", "tier": 3, "name": "동아일보 경제", "url": "https://rss.donga.com/economy.xml"},
+
+    {"category": "암호화폐", "tier": 2, "name": "CoinDesk", "url": "https://www.coindesk.com/arc/outboundfeeds/rss/"},
+    {"category": "암호화폐", "tier": 2, "name": "The Block", "url": "https://www.theblock.co/rss.xml"},
+    {"category": "암호화폐", "tier": 3, "name": "Cointelegraph", "url": "https://cointelegraph.com/rss"},
+    {"category": "암호화폐", "tier": 3, "name": "Decrypt", "url": "https://decrypt.co/feed"},
+    {"category": "암호화폐", "tier": 3, "name": "Bitcoin Magazine", "url": "https://bitcoinmagazine.com/feed"},
+
+    {"category": "채권·금리", "tier": 1, "name": "Fed Speeches", "url": "https://www.federalreserve.gov/feeds/speeches.xml"},
+    {"category": "채권·금리", "tier": 1, "name": "Fed H.15 Selected Interest Rates", "url": "https://www.federalreserve.gov/feeds/h15.xml"},
+    {"category": "채권·금리", "tier": 2, "name": "Investing.com Economic News", "url": "https://www.investing.com/rss/news_14.rss"},
+    {"category": "채권·금리", "tier": 3, "name": "Seeking Alpha Market Currents", "url": "https://seekingalpha.com/market_currents.xml"},
+
+    {"category": "원자재", "tier": 1, "name": "EIA Today in Energy", "url": "https://www.eia.gov/rss/todayinenergy.xml"},
+    {"category": "원자재", "tier": 1, "name": "EIA Press", "url": "https://www.eia.gov/rss/press_rss.xml"},
+    {"category": "원자재", "tier": 3, "name": "OilPrice.com", "url": "https://oilprice.com/rss/main"},
+    {"category": "원자재", "tier": 3, "name": "Mining.com", "url": "https://www.mining.com/feed/"},
+
+    {"category": "IT·테크", "tier": 2, "name": "TechCrunch", "url": "https://techcrunch.com/feed/"},
+    {"category": "IT·테크", "tier": 3, "name": "The Verge", "url": "https://www.theverge.com/rss/index.xml"},
+    {"category": "IT·테크", "tier": 3, "name": "Ars Technica", "url": "https://feeds.arstechnica.com/arstechnica/index"},
+    {"category": "IT·테크", "tier": 3, "name": "Tom's Hardware", "url": "https://www.tomshardware.com/feeds/all"}
+  ]
+}

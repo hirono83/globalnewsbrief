@@ -1,0 +1,22 @@
+{
+  "note": "브리핑 완성 후 전달 경로 설정. 스킬의 Step 10이 이 파일을 읽는다.",
+  "repository": {
+    "enabled": true,
+    "path": "reports/{date}.md",
+    "branch": "claude/festive-brown-x5n1oq",
+    "commit_message": "briefing: {date}"
+  },
+  "email": {
+    "enabled": true,
+    "to": "jisthex@gmail.com",
+    "subject": "[글로벌 뉴스 브리핑] {date}",
+    "connector": "Gmail"
+  },
+  "notion": {
+    "enabled": true,
+    "parent_page": null,
+    "parent_page_note": "상위 페이지 URL 또는 ID. null이면 스킬이 사용자에게 한 번 물어보고 이 값을 채운다.",
+    "title": "{date} 글로벌 뉴스 브리핑",
+    "connector": "Notion"
+  }
+}
