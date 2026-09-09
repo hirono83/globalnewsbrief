@@ -14,8 +14,8 @@
   },
   "notion": {
     "enabled": true,
-    "parent_page": null,
-    "parent_page_note": "상위 페이지 URL 또는 ID. null이면 스킬이 사용자에게 한 번 물어보고 이 값을 채운다.",
+    "parent_page": "https://app.notion.com/p/3d609bc5384381a29393e16c77337254",
+    "parent_page_note": "브리핑을 쌓을 상위 페이지. 하위에 날짜별 페이지를 만든다.",
     "title": "{date} 글로벌 뉴스 브리핑",
     "connector": "Notion"
   }
