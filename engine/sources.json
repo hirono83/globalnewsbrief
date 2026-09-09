@@ -16,9 +16,9 @@
     },
     {
       "category": "글로벌",
-      "tier": 3,
-      "name": "Financial Times",
-      "url": "https://www.ft.com/rss/home"
+      "tier": 2,
+      "name": "Investing.com News",
+      "url": "https://www.investing.com/rss/news.rss"
     },
     {
       "category": "글로벌",
@@ -28,9 +28,9 @@
     },
     {
       "category": "글로벌",
-      "tier": 2,
-      "name": "Investing.com News",
-      "url": "https://www.investing.com/rss/news.rss"
+      "tier": 3,
+      "name": "Financial Times",
+      "url": "https://www.ft.com/rss/home"
     },
     {
       "category": "글로벌",
@@ -41,26 +41,14 @@
     {
       "category": "글로벌",
       "tier": 4,
-      "name": "Channel News Asia",
-      "url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml"
-    },
-    {
-      "category": "글로벌",
-      "tier": 4,
       "name": "Al Jazeera",
       "url": "https://www.aljazeera.com/xml/rss/all.xml"
     },
     {
-      "category": "미국",
-      "tier": 1,
-      "name": "Federal Reserve Press (All)",
-      "url": "https://www.federalreserve.gov/feeds/press_all.xml"
-    },
-    {
-      "category": "미국",
-      "tier": 1,
-      "name": "Federal Reserve Monetary Policy",
-      "url": "https://www.federalreserve.gov/feeds/press_monetary.xml"
+      "category": "글로벌",
+      "tier": 4,
+      "name": "Channel News Asia",
+      "url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml"
     },
     {
       "category": "미국",
@@ -71,8 +59,27 @@
     {
       "category": "미국",
       "tier": 1,
+      "name": "Federal Reserve Monetary Policy",
+      "url": "https://www.federalreserve.gov/feeds/press_monetary.xml"
+    },
+    {
+      "category": "미국",
+      "tier": 1,
+      "name": "Federal Reserve Press (All)",
+      "url": "https://www.federalreserve.gov/feeds/press_all.xml"
+    },
+    {
+      "category": "미국",
+      "tier": 1,
       "name": "SEC Press Releases",
       "url": "https://www.sec.gov/news/pressreleases.rss"
+    },
+    {
+      "category": "미국",
+      "tier": 1,
+      "name": "US Treasury",
+      "url": "https://home.treasury.gov/rss.xml",
+      "note": "공식 피드지만 갱신이 드물다(2026-07 확인 시 최신 항목이 6주 전). 수집 구간 필터가 구항목을 거르므로 해는 없고, 새 발표가 나오면 잡힌다."
     },
     {
       "category": "미국",
@@ -107,14 +114,26 @@
     {
       "category": "유럽",
       "tier": 1,
-      "name": "ECB Press",
-      "url": "https://www.ecb.europa.eu/rss/press.html"
+      "name": "Bank of England News",
+      "url": "https://www.bankofengland.co.uk/rss/news"
     },
     {
       "category": "유럽",
       "tier": 1,
-      "name": "Bank of England News",
-      "url": "https://www.bankofengland.co.uk/rss/news"
+      "name": "Deutsche Bundesbank — ECB 유동성공급 배분",
+      "url": "https://www.bundesbank.de/service/rss/en/878806/feed.rss"
+    },
+    {
+      "category": "유럽",
+      "tier": 1,
+      "name": "Deutsche Bundesbank — 조사·정책",
+      "url": "https://www.bundesbank.de/service/rss/en/633292/feed.rss"
+    },
+    {
+      "category": "유럽",
+      "tier": 1,
+      "name": "ECB Press",
+      "url": "https://www.ecb.europa.eu/rss/press.html"
     },
     {
       "category": "유럽",
@@ -125,8 +144,8 @@
     {
       "category": "유럽",
       "tier": 3,
-      "name": "Guardian Business",
-      "url": "https://www.theguardian.com/uk/business/rss"
+      "name": "DW Business",
+      "url": "https://rss.dw.com/rdf/rss-en-bus"
     },
     {
       "category": "유럽",
@@ -137,20 +156,20 @@
     {
       "category": "유럽",
       "tier": 3,
-      "name": "DW Business",
-      "url": "https://rss.dw.com/rdf/rss-en-bus"
-    },
-    {
-      "category": "중국",
-      "tier": 3,
-      "name": "SCMP China Economy",
-      "url": "https://www.scmp.com/rss/92/feed"
+      "name": "Guardian Business",
+      "url": "https://www.theguardian.com/uk/business/rss"
     },
     {
       "category": "중국",
       "tier": 3,
       "name": "SCMP China",
       "url": "https://www.scmp.com/rss/4/feed"
+    },
+    {
+      "category": "중국",
+      "tier": 3,
+      "name": "SCMP China Economy",
+      "url": "https://www.scmp.com/rss/92/feed"
     },
     {
       "category": "중국",
@@ -166,15 +185,21 @@
     },
     {
       "category": "일본",
-      "tier": 3,
-      "name": "Nikkei Asia",
-      "url": "https://asia.nikkei.com/rss/feed/nar"
+      "tier": 2,
+      "name": "Kyodo News",
+      "url": "https://english.kyodonews.net/list/feed/rss4kyodonews-fzone"
     },
     {
       "category": "일본",
       "tier": 3,
       "name": "Japan Times",
       "url": "https://www.japantimes.co.jp/feed/"
+    },
+    {
+      "category": "일본",
+      "tier": 3,
+      "name": "Nikkei Asia",
+      "url": "https://asia.nikkei.com/rss/feed/nar"
     },
     {
       "category": "한국",
@@ -191,6 +216,12 @@
     {
       "category": "한국",
       "tier": 3,
+      "name": "동아일보 경제",
+      "url": "https://rss.donga.com/economy.xml"
+    },
+    {
+      "category": "한국",
+      "tier": 3,
       "name": "매일경제 경제",
       "url": "https://www.mk.co.kr/rss/30100041/"
     },
@@ -203,8 +234,8 @@
     {
       "category": "한국",
       "tier": 3,
-      "name": "동아일보 경제",
-      "url": "https://rss.donga.com/economy.xml"
+      "name": "아시아경제 경제",
+      "url": "https://www.asiae.co.kr/rss/economy.htm"
     },
     {
       "category": "암호화폐",
@@ -221,6 +252,12 @@
     {
       "category": "암호화폐",
       "tier": 3,
+      "name": "Bitcoin Magazine",
+      "url": "https://bitcoinmagazine.com/feed"
+    },
+    {
+      "category": "암호화폐",
+      "tier": 3,
       "name": "Cointelegraph",
       "url": "https://cointelegraph.com/rss"
     },
@@ -231,22 +268,22 @@
       "url": "https://decrypt.co/feed"
     },
     {
-      "category": "암호화폐",
-      "tier": 3,
-      "name": "Bitcoin Magazine",
-      "url": "https://bitcoinmagazine.com/feed"
-    },
-    {
       "category": "채권·금리",
       "tier": 1,
-      "name": "Fed Speeches",
-      "url": "https://www.federalreserve.gov/feeds/speeches.xml"
+      "name": "Deutsche Bundesbank — 연방채 입찰결과",
+      "url": "https://www.bundesbank.de/service/rss/en/633306/feed.rss"
     },
     {
       "category": "채권·금리",
       "tier": 1,
       "name": "Fed H.15 Selected Interest Rates",
       "url": "https://www.federalreserve.gov/feeds/h15.xml"
+    },
+    {
+      "category": "채권·금리",
+      "tier": 1,
+      "name": "Fed Speeches",
+      "url": "https://www.federalreserve.gov/feeds/speeches.xml"
     },
     {
       "category": "채권·금리",
@@ -263,26 +300,26 @@
     {
       "category": "원자재",
       "tier": 1,
-      "name": "EIA Today in Energy",
-      "url": "https://www.eia.gov/rss/todayinenergy.xml"
-    },
-    {
-      "category": "원자재",
-      "tier": 1,
       "name": "EIA Press",
       "url": "https://www.eia.gov/rss/press_rss.xml"
     },
     {
       "category": "원자재",
-      "tier": 3,
-      "name": "OilPrice.com",
-      "url": "https://oilprice.com/rss/main"
+      "tier": 1,
+      "name": "EIA Today in Energy",
+      "url": "https://www.eia.gov/rss/todayinenergy.xml"
     },
     {
       "category": "원자재",
       "tier": 3,
       "name": "Mining.com",
       "url": "https://www.mining.com/feed/"
+    },
+    {
+      "category": "원자재",
+      "tier": 3,
+      "name": "OilPrice.com",
+      "url": "https://oilprice.com/rss/main"
     },
     {
       "category": "IT·테크",
@@ -293,14 +330,14 @@
     {
       "category": "IT·테크",
       "tier": 3,
-      "name": "The Verge",
-      "url": "https://www.theverge.com/rss/index.xml"
+      "name": "Ars Technica",
+      "url": "https://feeds.arstechnica.com/arstechnica/index"
     },
     {
       "category": "IT·테크",
       "tier": 3,
-      "name": "Ars Technica",
-      "url": "https://feeds.arstechnica.com/arstechnica/index"
+      "name": "The Verge",
+      "url": "https://www.theverge.com/rss/index.xml"
     },
     {
       "category": "IT·테크",
@@ -309,7 +346,7 @@
       "url": "https://www.tomshardware.com/feeds/all"
     }
   ],
-  "candidate_feeds_note": "지금은 수집되지 않지만 확보하면 가치가 큰 피드. blocked_reason이 재검증 방법을 가른다. waf=이 IP를 차단당한 것이므로 다른 네트워크(가정용 회선 등)에서 다시 시도하면 뚫릴 수 있다. url_unknown=URL 자체가 틀렸으므로 IP를 바꿔도 소용없고 해당 기관의 실제 피드 주소를 찾아야 한다. none=RSS를 아예 제공하지 않는다. python3 engine/check_feeds.py --candidates 로 한 번에 재검증한다. 통과한 항목은 feeds 배열로 옮기고 여기서 지운다.",
+  "candidate_feeds_note": "지금은 수집되지 않지만 확보하면 가치가 큰 피드. blocked_reason이 재검증 방법을 가른다. waf=이 IP를 차단당한 것이므로 다른 네트워크(가정용 회선 등)에서 다시 시도하면 뚫릴 수 있다. egress_policy=이 세션의 egress 프록시가 막은 것이므로 다른 네트워크에서 정상일 수 있다. none=RSS를 제공하지 않거나 피드가 정지된 것으로 확인됐다. 다른 네트워크에서도 풀리지 않으므로 대안 소스를 찾아야 한다. url_unknown 항목은 2026-09-09 조사로 모두 해소됐다. python3 engine/check_feeds.py --candidates 로 한 번에 재검증한다.",
   "candidate_feeds": [
     {
       "category": "미국",
@@ -318,14 +355,6 @@
       "url": "https://www.bls.gov/feed/bls_latest.rss",
       "blocked_reason": "waf",
       "detail": "HTTP 403. UA를 바꿔도 동일. 고용·CPI 발표의 1차 출처라 가치가 가장 크다."
-    },
-    {
-      "category": "미국",
-      "tier": 1,
-      "name": "US Treasury Press",
-      "url": "https://home.treasury.gov/rss/press.xml",
-      "blocked_reason": "url_unknown",
-      "detail": "404. /news/press-releases/feed, /rss/press-releases.xml 도 404."
     },
     {
       "category": "미국",
@@ -348,8 +377,8 @@
       "tier": 1,
       "name": "BIS Press Releases",
       "url": "https://www.bis.org/doclist/press_rlsprs.rss",
-      "blocked_reason": "url_unknown",
-      "detail": "404. /list/press_rlsprs/index.rss, /press/index.rss 도 404."
+      "blocked_reason": "none",
+      "detail": "bis.org 홈페이지에 RSS 링크가 없고 doclist/list/rss 경로 5종이 모두 404. RSS 미제공으로 판단한다."
     },
     {
       "category": "글로벌",
@@ -373,15 +402,15 @@
       "name": "한국은행 보도자료",
       "url": "https://www.bok.or.kr/portal/bbs/B0000338/rss.do?menuNo=200761",
       "blocked_reason": "waf",
-      "detail": "HTTP 500. menuNo를 바꿔도 동일. 한국 카테고리에 tier 1 원자료가 없는 주된 이유."
+      "detail": "rss.do가 HTTP 500이고 홈페이지에도 RSS 링크가 없다. 다른 회선에서 500이 재현되는지 먼저 확인할 것."
     },
     {
       "category": "한국",
       "tier": 1,
       "name": "기획재정부 보도자료",
       "url": "https://www.moef.go.kr/com/bbs/rss.do?bbsId=MOSFBBS_000000000028",
-      "blocked_reason": "url_unknown",
-      "detail": "XML 파싱 실패 및 연결 리셋. 실제 피드 주소 확인 필요."
+      "blocked_reason": "none",
+      "detail": "moef.go.kr 홈페이지에 RSS 링크가 없고 rss 경로 3종이 연결 리셋 또는 HTML. RSS 미제공으로 판단한다."
     },
     {
       "category": "한국",
@@ -396,8 +425,8 @@
       "tier": 4,
       "name": "Korea Herald Business",
       "url": "https://www.koreaherald.com/rss/020000000000",
-      "blocked_reason": "url_unknown",
-      "detail": "200이지만 channel에 item이 0건. 올바른 카테고리 코드 확인 필요."
+      "blocked_reason": "none",
+      "detail": "newsBusiness·010000000000·020000000000 모두 200이지만 channel에 item이 0건. 빈 피드."
     },
     {
       "category": "중국",
@@ -412,40 +441,24 @@
       "tier": 2,
       "name": "Caixin Global",
       "url": "https://www.caixinglobal.com/rss/xml/latest.xml",
-      "blocked_reason": "url_unknown",
-      "detail": "404. /rss/all.xml, /feed/ 도 404."
+      "blocked_reason": "waf",
+      "detail": "실제 피드는 gateway.caixin.com/api/data/global/feedlyRss.xml이나 Accept 헤더를 무엇으로 줘도 HTTP 406. Feedly 전용이거나 IP 제한으로 보인다."
     },
     {
       "category": "일본",
       "tier": 1,
       "name": "Japan MOF",
       "url": "https://www.mof.go.jp/english/rss/index.xml",
-      "blocked_reason": "url_unknown",
-      "detail": "404. /rss/en_new_info.xml 도 404."
+      "blocked_reason": "none",
+      "detail": "mof.go.jp 홈페이지에 RSS 링크가 없고 rss 경로 4종이 404 또는 HTML. RSS 미제공으로 판단한다."
     },
     {
       "category": "일본",
       "tier": 3,
       "name": "NHK World Business",
       "url": "https://www3.nhk.or.jp/nhkworld/en/news/rss/business.xml",
-      "blocked_reason": "url_unknown",
-      "detail": "404. /rss/all.xml, /news/feeds/ 도 404."
-    },
-    {
-      "category": "일본",
-      "tier": 2,
-      "name": "Kyodo News",
-      "url": "https://english.kyodonews.net/rss/all.xml",
-      "blocked_reason": "url_unknown",
-      "detail": "404. /rss/news.xml, /rss/business.xml 도 404."
-    },
-    {
-      "category": "유럽",
-      "tier": 1,
-      "name": "Deutsche Bundesbank",
-      "url": "https://www.bundesbank.de/service/rss/en/2754/feed.xml",
-      "blocked_reason": "url_unknown",
-      "detail": "404. /service/rss/en/press-releases, /rss/en/press 도 404."
+      "blocked_reason": "none",
+      "detail": "nhk.or.jp/rss/news/cat0·cat5는 응답하지만 최신 항목이 한 달 전에서 멈춰 있다. 사실상 정지된 피드."
     },
     {
       "category": "원자재",

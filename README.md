@@ -10,7 +10,7 @@
 수집과 판단을 분리한 하이브리드 파이프라인이다.
 
 ```
-engine/collect.py       50개 피드 수집 → 구간 필터 → 정규화 → 1차 중복제거 → 사전정렬
+engine/collect.py       56개 피드 수집 → 구간 필터 → 정규화 → 1차 중복제거 → 사전정렬
 engine/market_data.py   As-of가 확인된 가격 데이터 (미 국채 수익률 곡선)
         ↓  out/candidates.md · out/market_data.md
 .claude/skills/news-brief   사건 단위 병합 → 사실 확인 → 중요도 선별 → 브리핑 작성
@@ -83,13 +83,18 @@ claude.ai 구독 한도로 실행되므로 API 요금이 발생하지 않는다.
 
 ### 피드로 수집할 수 없는 기관
 
-BLS, IMF, CNBC, 한국은행, 한국경제 등은 데이터센터 IP를 WAF로 차단한다(403 또는
-Cloudflare 챌린지). `sources.json`의 `known_blocked`에 기록해 두었고, 해당 카테고리는
-LLM 단계가 웹 검색으로 보강한 뒤 Coverage Audit에 그 사실을 적는다.
+`sources.json`의 `candidate_feeds`에 15개가 남아 있고, `blocked_reason`이 재검증
+방법을 가른다.
 
-특히 **한국과 중국 카테고리에는 tier 1 공식 원자료 피드가 없다.** 한국은행·기획재정부·
-PBOC·중국 국가통계국은 모두 RSS를 제공하지 않거나 차단한다. 이 두 카테고리의 공식
-발표는 웹 검색 보강에 의존한다.
+- `waf`(8) · `egress_policy`(1) — BLS·한국은행·한국경제·NY Fed·IMF·CNBC·IEA 등이
+  데이터센터 IP를 차단한다(403 또는 Cloudflare 챌린지). **다른 네트워크에서는 풀릴 수
+  있다.** `python3 engine/check_feeds.py --candidates`로 재확인한다.
+- `none`(6) — BIS·Japan MOF·기획재정부·PBOC·NHK·Korea Herald는 RSS 미제공 또는 정지로
+  확정됐다. 재시도해도 소용없으므로 대안 소스가 필요하다.
+
+**한국과 중국 카테고리에는 tier 1 공식 원자료 피드가 없다.** 이 두 카테고리의 공식
+발표는 LLM 단계의 웹 검색 보강에 의존하며, 그 사실은 Coverage Audit에 기록된다.
+자세한 조사 결과와 재검증 절차는 [docs/FOLLOW-UP.md](docs/FOLLOW-UP.md)에 있다.
 
 ## 비용
 
