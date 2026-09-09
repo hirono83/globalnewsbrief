@@ -54,7 +54,7 @@ jobs:
           openai-api-key: ${{ secrets.OPENAI_API_KEY }}
           prompt-file: run-prompt.md
           output-file: codex-output.md
-          codex-args: '["--search", "--ephemeral"]'
+          codex-args: '["--config", "web_search=\"live\"", "--ephemeral"]'
           model: gpt-5.5
           effort: high
           sandbox: read-only
