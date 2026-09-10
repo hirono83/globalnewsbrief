@@ -114,7 +114,10 @@ python3 engine/check_links.py reports/$(TZ=Asia/Seoul date +%F).md
 - [x] Coverage Audit의 수치가 `out/candidates.json` 의 `meta` 와 어긋나지 않는가 —
       2,021 / 932 / 868로 일치
 - [x] 웹 검색으로 보강한 카테고리가 Coverage Audit에 기록됐는가 — 한국·미국·유럽 3건
-- [ ] 커밋 · 이메일 · Notion 세 경로가 모두 성공했는가
+- [x] 커밋 · 이메일 · Notion 세 경로가 모두 성공했는가 — 2026-09-10 세 경로 모두 확인.
+      다만 같은 날 두 세션이 각각 브리핑을 만들어 `reports/2026-09-10.md` 가 add/add로
+      충돌했고, 이메일도 두 번 나갔다. **동시 실행 방어가 없다.** 재실행 전에 이미
+      같은 날짜의 커밋·메일·Notion 페이지가 있는지 확인하는 절차가 필요하다.
 - [x] 월요일에 실행했을 때 수집 구간이 자동으로 넓어지는가 — `default_window_start()` 를
       요일별로 호출해 확인. 월 07:00 KST는 50시간(금 미국 장 마감 이후), 화~토는 24시간
 
