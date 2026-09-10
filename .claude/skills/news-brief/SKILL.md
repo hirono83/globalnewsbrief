@@ -111,6 +111,10 @@ python3 engine/market_data.py
 **수집이 실패하거나 웹 검색과 외부 출처 확인을 전혀 할 수 없으면 브리핑을 작성하지
 말고 `최신 뉴스 확인 불가`라고만 알린다.**
 
+`engine/collect.py` 가 없다면 리포지토리가 클론되지 않은 것이다. 예약 실행 Routine에
+저장소가 연결돼 있지 않으면 이렇게 된다. 이때는 조용히 끝내지 말고 `저장소 미연결 —
+Routine 설정에 hirono83/globalnewsbrief 를 추가해야 함` 이라고 명확히 보고한다.
+
 ### Step 1. Coverage Search
 
 `out/candidates.md`의 10개 카테고리를 모두 검토한다. 카테고리별로 검색 완료 여부,
@@ -174,8 +178,18 @@ python3 engine/market_data.py
 ### Step 8. Final Brief
 
 아래 고정 출력 구조로 작성한다. **수집·중복 제거·사실 확인이 끝나기 전에는 결론을
-작성하지 않는다.** 결과를 `reports/YYYY-MM-DD.md`에 쓴다(기준일 KST). 같은 날 다시
-실행하면 같은 파일을 갱신한다.
+작성하지 않는다.** 결과를 `reports/<기준일>.md`에 쓴다. 같은 날 다시 실행하면 같은
+파일을 갱신한다.
+
+**기준일은 반드시 KST로 구한다.**
+
+```bash
+TZ=Asia/Seoul date +%F
+```
+
+컨테이너의 기본 시간대는 UTC다. 이 브리핑은 07:00 KST에 예약 실행되는데 그 시각은
+UTC로 전날 22:00이므로, 그냥 `date +%F` 를 쓰면 **하루 전 날짜가 나와 어제 브리핑을
+덮어쓴다.** 아래 Step 9·10의 파일 경로에도 같은 값을 쓴다.
 
 ## 고정 출력 구조
 
@@ -280,8 +294,9 @@ python3 engine/market_data.py
 브리핑을 저장한 뒤 반드시 두 검사를 통과시킨다.
 
 ```bash
-python3 engine/validate_report.py reports/YYYY-MM-DD.md
-python3 engine/check_links.py reports/YYYY-MM-DD.md
+REPORT="reports/$(TZ=Asia/Seoul date +%F).md"
+python3 engine/validate_report.py "$REPORT"
+python3 engine/check_links.py "$REPORT"
 ```
 
 - `validate_report.py`가 오류를 내면 **고칠 때까지 커밋·발송하지 않는다.**
@@ -294,11 +309,11 @@ python3 engine/check_links.py reports/YYYY-MM-DD.md
 `engine/delivery.json`의 설정을 읽고 그대로 따른다. 각 경로가 성공했는지 사용자에게
 한 줄로 보고한다.
 
-1. **리포지토리 커밋** — `reports/YYYY-MM-DD.md`를 커밋하고 설정된 브랜치로 푸시한다.
+1. **리포지토리 커밋** — `reports/<KST 기준일>.md`를 커밋하고 설정된 브랜치로 푸시한다.
    내용이 이전과 같으면 새 커밋을 만들지 않는다. `out/`은 커밋하지 않는다.
 2. **이메일** — Gmail 커넥터로 설정된 주소에 보낸다. 제목은
-   `[글로벌 뉴스 브리핑] YYYY-MM-DD`, 본문은 브리핑 전문.
-3. **Notion** — 설정된 상위 페이지 아래에 `YYYY-MM-DD` 제목으로 페이지를 만든다.
+   `[글로벌 뉴스 브리핑] <KST 기준일>`, 본문은 브리핑 전문.
+3. **Notion** — 설정된 상위 페이지 아래에 `<KST 기준일>` 제목으로 페이지를 만든다.
    같은 날짜 페이지가 이미 있으면 새로 만들지 말고 갱신한다.
 
 한 경로가 실패해도 나머지는 계속 진행하고, 실패한 경로와 사유를 보고한다.
